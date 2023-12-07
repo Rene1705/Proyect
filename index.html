@@ -52,26 +52,39 @@
 <!--Finaliza codigo calculadora CSS-->
 
 
-<!DOCTYPE html>
+
+   <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Binario a Decimal</title>
+    <title>Calculadora Binaria/Decimal</title>
     <script>
         function binarioADecimal() {
             var inputBinario = document.getElementById("inputBinario").value;
             var resultadoDecimal = parseInt(inputBinario, 2);
             document.getElementById("resultadoDecimal").innerHTML = "Resultado Decimal: " + resultadoDecimal;
         }
+
+        function decimalABinario() {
+            var inputDecimal = document.getElementById("inputDecimal").value;
+            var resultadoBinario = (inputDecimal >>> 0).toString(2);
+            document.getElementById("resultadoBinario").innerHTML = "Resultado Binario: " + resultadoBinario;
+        }
     </script>
 </head>
 <body>
-    <h1>Calculadora Binario a Decimal</h1>
-    <label for="inputBinario">Ingrese número binario:</label>
+    <h1>Calculadora Binaria/Decimal</h1>
+    
+    <label for="inputBinario">Binario:</label>
     <input type="text" id="inputBinario" placeholder="Ingrese binario">
-    <button onclick="binarioADecimal()">Convertir</button>
+    <button onclick="binarioADecimal()">Convertir a Decimal</button>
     <p id="resultadoDecimal"></p>
+
+    <label for="inputDecimal">Decimal:</label>
+    <input type="text" id="inputDecimal" placeholder="Ingrese decimal">
+    <button onclick="decimalABinario()">Convertir a Binario</button>
+    <p id="resultadoBinario"></p>
 </body>
-</html>
+</html> 
 
