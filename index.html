@@ -55,34 +55,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora Binaria y Decimal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Binario a Decimal</title>
+    <script>
+        function binarioADecimal() {
+            var inputBinario = document.getElementById("inputBinario").value;
+            var resultadoDecimal = parseInt(inputBinario, 2);
+            document.getElementById("resultadoDecimal").innerHTML = "Resultado Decimal: " + resultadoDecimal;
+        }
+    </script>
 </head>
 <body>
-  <h1>Calculadora Binaria y Decimal</h1>
-
-  <label for="inputNumber">Ingrese un número:</label>
-  <input type="text" id="inputNumber">
-
-  <button onclick="convertToBinary()">Convertir a Binario</button>
-  <button onclick="convertToDecimal()">Convertir a Decimal</button>
-
-  <p id="result"></p>
-
-  <script>
-    function convertToBinary() {
-      const inputNumber = document.getElementById('inputNumber').value;
-      const decimalNumber = parseInt(inputNumber, 10);
-      const binaryNumber = decimalNumber.toString(2);
-      document.getElementById('result').innerText = Binario: ${binaryNumber};
-    }
-
-    function convertToDecimal() {
-      const inputNumber = document.getElementById('inputNumber').value;
-      const binaryNumber = parseInt(inputNumber, 2);
-      document.getElementById('result').innerText = Decimal: ${binaryNumber};
-    }
-  </script>
+    <h1>Calculadora Binario a Decimal</h1>
+    <label for="inputBinario">Ingrese número binario:</label>
+    <input type="text" id="inputBinario" placeholder="Ingrese binario">
+    <button onclick="binarioADecimal()">Convertir</button>
+    <p id="resultadoDecimal"></p>
 </body>
 </html>
+
